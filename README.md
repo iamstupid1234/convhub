@@ -2,4 +2,4 @@
 
 so, i was bored.
 
-`loadstring(game:HttpGet("https://github.com/iamstupid1234/convhub/blob/main/script.lua", true))()`
+`loadstring(game:HttpGet("https://raw.githubusercontent.com/iamstupid1234/convhub/main/script.lua", true))()`
