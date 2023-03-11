@@ -49,6 +49,34 @@ LpSec2:NewButton("rejoin", "Rejoins the server you are in", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
 end)
 
+LpSec2:NewButton("refresh [double-click]", "Refreshes your player.", function()
+    game.Players.LocalPlayer.Character.Humanoid.Name = 1
+    local l = game.Players.LocalPlayer.Character["1"]:Clone()
+    l.Parent = game.Players.LocalPlayer.Character
+    l.Name = "Humanoid"
+    wait()
+    game.Players.LocalPlayer.Character["1"]:Destroy()
+    game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+    game.Players.LocalPlayer.Character.Animate.Disabled = true
+    wait()
+    game.Players.LocalPlayer.Character.Animate.Disabled = false
+    game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+    wait()
+    Location = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait()
+    local prt = Instance.new("Model", workspace);
+    Instance.new("Part", prt).Name="Torso";
+    Instance.new("Part", prt).Name="Head";
+    Instance.new("Humanoid", prt).Name="Humanoid";
+    game.Players.LocalPlayer.Character=prt
+    wait(6)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Location
+end)
+
+
+    
+
+
 
 
 -- Games Tab
@@ -86,7 +114,7 @@ end)
 -- Advanced tab
 local Adv = Window:NewTab("tools")
 local AdvSec = Adv:NewSection("game")
-local AdvSec2 = Adv:NewSection("players")
+local AdvSec2 = Adv:NewSection("player")
 
 AdvSec:NewButton("dark dex v4", "its also in synapse's scripthub", function()
 
